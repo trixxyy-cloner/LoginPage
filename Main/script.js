@@ -5,7 +5,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const password = document.getElementById("password").value.trim();
   const error = document.getElementById("error");
 
-  // Example validation (you can replace this with actual backend check)
+  // Example for validation
   if (username === "sonny" && password === "13371337") {
     alert("Login successful!");
     // Redirect or proceed further
