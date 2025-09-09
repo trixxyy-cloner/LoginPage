@@ -55,9 +55,6 @@ button {
     cursor: pointer;
 }
 
-#logoutBtn {
-        
-}
 
 button:hover {
     background-color: #525252;
