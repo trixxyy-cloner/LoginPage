@@ -15,7 +15,7 @@
         content.style.display = "none";
 
         const welcomeDiv = document.createElement("div");
-        welcomeDiv.innerHTML = "<h2>Welcome Stranger, " + username + "!</h2>";
+        welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>";
 
         const logoutBtn = document.createElement("button");
         logoutBtn.innerHTML = "Logout";
