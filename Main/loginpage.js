@@ -14,8 +14,12 @@
     if (username === "test" && password === "1234") {
         content.style.display = "none";
 
+        // Här skapar vi en div med en h1 med text, vi hämtar även username "test"
+
         const welcomeDiv = document.createElement("div");
         welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>";
+
+        // Här skapar vi en logga ut knapp och hämtar den med appendChild
 
         const logoutBtn = document.createElement("button");
         logoutBtn.innerHTML = "Logout";
@@ -24,7 +28,11 @@
 
         document.body.appendChild(welcomeDiv);
 
+        // Här skapar jag en tom error sträng som jag sedan hämtar i else statement
+
         error.textContent = "";
+
+        // Här skapar jag en eventListener som lyssnar efter ett click på min logga ut knapp och då tar vi bort diven vi skapade innan och går tillbaka till login formuläret
 
         logoutBtn.addEventListener("click", function () {
             welcomeDiv.remove();
