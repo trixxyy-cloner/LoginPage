@@ -1,11 +1,14 @@
    document.getElementById("loginForm").addEventListener("submit", function (e) {
     e.preventDefault();
+
     // Här har vi variabler för användarnamn, lösenord och ett fel meddelande.   
+
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
     const error = document.getElementById("error");
 
-    // variable for content
+    // Här hämtar vi variablen content som då har id="content"
+    
     const content = document.getElementById("content");
 
     // Här testar vi om användarnamn och lösenord är korrekt och även visar antingen ett välkomst meddelande eller ett fel meddelande.
