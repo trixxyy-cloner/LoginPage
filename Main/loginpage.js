@@ -1,6 +1,6 @@
    document.getElementById("loginForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    // variables for username, password and error message    
+    // Här har vi variabler för användarnamn, lösenord och ett fel meddelande.   
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
     const error = document.getElementById("error");
@@ -8,8 +8,8 @@
     // variable for content
     const content = document.getElementById("content");
 
-    // Check if username and password are correct and display welcome message or error message 
-    // Also hide content and show logout button on successful login
+    // Här testar vi om användarnamn och lösenord är korrekt och även visar antingen ett välkomst meddelande eller ett fel meddelande.
+    // Vi gömmer även bort diven content och visar en logut knapp när vi loggat in.
 
     if (username === "test" && password === "1234") {
         content.style.display = "none";
