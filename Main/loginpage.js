@@ -21,17 +21,18 @@
 
         const welcomeDiv = document.createElement("div");
        
-        function welcomeMsg () {
-            const h1 = document.createElement("<h1>Welcome strager", + username + "!</h1>")
-            document.appendChild(h1);
+        
+            const h1 = document.createElement("h1");
+            h1.textContent = "Welcome strager", + username + "!";
+            document.body.appendChild(h1);
 
-        }
+        
         //  welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>"; // fix innerhtml, big noNO
 
         // Här skapar vi en logga ut knapp och hämtar den med appendChild
 
         const logoutBtn = document.createElement("button");
-        logoutBtn.innerHTML = "Logout"; // fix inner html
+        logoutBtn.textContent = "Logout"; // fix inner html
         logoutBtn.id = "logoutBtn";
         welcomeDiv.appendChild(logoutBtn);
 
@@ -47,6 +48,8 @@
             welcomeDiv.remove();
             content.style.display = "block";
             document.getElementById("loginForm").reset();
+
+            h1.remove();
         });
 
     }
