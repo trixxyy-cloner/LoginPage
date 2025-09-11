@@ -29,13 +29,16 @@ h2 {
     text-align: center;
     margin-bottom: 35px;
     font-size: 30px;
+    text-shadow: 2px 2px grey;
+    
 }
 
 h1 {
     text-align: center; 
     margin-bottom: 35px;
     font-size: 35px;
-    color: white;
+    text-shadow: 2px 2px grey;
+    color: rgb(190, 190, 190);
 }
 
 .input-group {

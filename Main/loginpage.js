@@ -16,23 +16,21 @@
 
     if (username === "test" && password === "1234") {
         content.style.display = "none";
+        
 
         // Här skapar vi en div med en h1 med text, vi hämtar även username "test"
 
-        const welcomeDiv = document.createElement("div");
+            const welcomeDiv = document.createElement("div");
        
-        
             const h1 = document.createElement("h1");
-            h1.textContent = "Welcome strager", + username + "!";
+            h1.textContent = "Welcome stranger " + username + "!";
             document.body.appendChild(h1);
 
         
-        //  welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>"; // fix innerhtml, big noNO
-
         // Här skapar vi en logga ut knapp och hämtar den med appendChild
 
         const logoutBtn = document.createElement("button");
-        logoutBtn.textContent = "Logout"; // fix inner html
+        logoutBtn.textContent = "Logout"; 
         logoutBtn.id = "logoutBtn";
         welcomeDiv.appendChild(logoutBtn);
 
