@@ -20,12 +20,12 @@
         // Här skapar vi en div med en h1 med text, vi hämtar även username "test"
 
         const welcomeDiv = document.createElement("div");
-        welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>";
+        welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>"; // fix innerhtml, big noNO
 
         // Här skapar vi en logga ut knapp och hämtar den med appendChild
 
         const logoutBtn = document.createElement("button");
-        logoutBtn.innerHTML = "Logout";
+        logoutBtn.innerHTML = "Logout"; // fix inner html
         logoutBtn.id = "logoutBtn";
         welcomeDiv.appendChild(logoutBtn);
 
