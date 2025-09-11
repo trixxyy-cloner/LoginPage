@@ -20,7 +20,13 @@
         // Här skapar vi en div med en h1 med text, vi hämtar även username "test"
 
         const welcomeDiv = document.createElement("div");
-        welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>"; // fix innerhtml, big noNO
+       
+        function welcomeMsg () {
+            const h1 = document.createElement("<h1>Welcome strager", + username + "!</h1>")
+            document.appendChild(h1);
+
+        }
+        //  welcomeDiv.innerHTML = "<h1>Welcome Stranger, " + username + "!</h1>"; // fix innerhtml, big noNO
 
         // Här skapar vi en logga ut knapp och hämtar den med appendChild
 
