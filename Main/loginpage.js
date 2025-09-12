@@ -1,9 +1,8 @@
-    document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById("content");
     const error = document.getElementById("error");
 
     // Kolla om användaren är inloggad i localStorage
-    if (localStorage.getItem("loggedIn") === "true") {
+    if (localStorage.getItem("username")) {
         Welcome(localStorage.getItem("username"));
         content.style.display = "none";
     }
@@ -21,7 +20,6 @@
         // Sparar även inloggningsstatusen i localStorage
 
         if (username === "test" && password === "1234") {
-            localStorage.setItem("loggedIn", "true");
             localStorage.setItem("username", username);
 
             content.style.display = "none";
@@ -53,10 +51,6 @@
             h1.remove();
             content.style.display = "block";
             document.getElementById("loginForm").reset();
-            localStorage.removeItem("loggedIn");
             localStorage.removeItem("username");
         });
     }
-});
-
-
