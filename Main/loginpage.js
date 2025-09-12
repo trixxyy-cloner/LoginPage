@@ -1,58 +1,62 @@
-   document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Här har vi variabler för användarnamn, lösenord och ett fel meddelande. 
-    // Skapar även variablen content och hämtar den med id  
-
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+    document.addEventListener("DOMContentLoaded", function () {
+    const content = document.getElementById("content");
     const error = document.getElementById("error");
-    const content = document.getElementById("content"); 
 
-    // Här testar vi om användarnamn och lösenord är korrekt och även visar antingen ett välkomst meddelande eller ett fel meddelande.
-    // Vi gömmer även bort diven content och visar en logut knapp när vi loggat in.
-
-    if (username === "test" && password === "1234") {
+    // Kolla om användaren är inloggad i localStorage
+    if (localStorage.getItem("loggedIn") === "true") {
+        Welcome(localStorage.getItem("username"));
         content.style.display = "none";
-        
+    }
 
-        // Här skapar vi en div med en h1 med text, vi hämtar även username "test"
+    // Hämtar vårat loginForm och lägger till en eventListener.
+    // Skapar även variabler för username och password.
 
-            const welcomeDiv = document.createElement("div");
-       
-            const h1 = document.createElement("h1");
-            h1.textContent = "Welcome stranger " + username + "!";
-            document.body.appendChild(h1);
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        
-        // Här skapar vi en logga ut knapp och hämtar den med appendChild
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        // Här kollar vi om username och password är rätt och loggar in användaren
+        // Sparar även inloggningsstatusen i localStorage
+
+        if (username === "test" && password === "1234") {
+            localStorage.setItem("loggedIn", "true");
+            localStorage.setItem("username", username);
+
+            content.style.display = "none";
+            Welcome(username);
+            error.textContent = "";
+        } else {
+            error.textContent = "Invalid username or password";
+        }
+    });
+
+    // Här har vi en funktion som är en vällkomst div som skapas när användaren loggar in
+    // Innehåller även en logout knapp som tar bort vällkomst div:en och visar loginForm igen
+
+    function Welcome(username) {
+        const welcomeDiv = document.createElement("div");
+        const h1 = document.createElement("h1");
+        h1.textContent = "Welcome stranger " + username + "!";
+        document.body.appendChild(h1);
 
         const logoutBtn = document.createElement("button");
-        logoutBtn.textContent = "Logout"; 
+        logoutBtn.textContent = "Logout";
         logoutBtn.id = "logoutBtn";
         welcomeDiv.appendChild(logoutBtn);
 
         document.body.appendChild(welcomeDiv);
 
-        // Här skapar jag en tom error sträng som jag sedan hämtar i else statement
-
-        error.textContent = "";
-
-        // Här skapar jag en eventListener som lyssnar efter ett click på min logga ut knapp och då tar vi bort diven vi skapade innan och går tillbaka till login formuläret
-
         logoutBtn.addEventListener("click", function () {
             welcomeDiv.remove();
+            h1.remove();
             content.style.display = "block";
             document.getElementById("loginForm").reset();
-
-            h1.remove();
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("username");
         });
-
     }
-    else {
-        error.textContent = "Invalid username or password";
-    }
-});       
-
+});
 
 
